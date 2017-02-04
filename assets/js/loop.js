@@ -1,5 +1,5 @@
 jQuery( function($){
-	
+
 	/*----------------------/
 	/* PAGE LOADER
 	/*---------------------*/
@@ -33,17 +33,17 @@ jQuery( function($){
 			}
 		}
 	});
-	
+
 	// navbar and logo switch related with screen width
 	function toggleNavbar() {
 		if( ($(window).width() > 1024) && ($(document).scrollTop() <= 150) ) {
 			$(".navbar").removeClass("navbar-light");
-			
+
 			// set back to logo white if the origin is white logo
 			if( $('.logo-light').length > 0 ) {
 				$('.navbar-brand img').attr('src', 'assets/img/loop-logo-white.png');
 			}
-			
+
 		} else {
 			$(".navbar").addClass("navbar-light");
 			$('.navbar-brand img').attr('src', 'assets/img/loop-logo.png');
@@ -95,7 +95,7 @@ jQuery( function($){
 			slides:  	[				// Slideshow Images
 							{image : 'assets/img/sliders/slider1.png', title : '<div class="hero-text"><h2 class="hero-heading">HANDCRAFTED</h2><p>Built to provide great visitor experience</p></div>', thumb : '', url : ''},
 							{image : 'assets/img/sliders/slider2.png', title : '<div class="hero-text"><h2 class="hero-heading">PARALLAX</h2><p>Scrolling the page is fun with parallax background</p></div>', thumb : '', url : ''},
-							{image : 'assets/img/sliders/slider3.png', title : '<div class="hero-text"><h2 class="hero-heading">BUY ONE FOR TWO</h2><p>Buy one to get both of the agency and personal theme</p></div>', thumb : '', url : ''}  
+							{image : 'assets/img/sliders/slider3.png', title : '<div class="hero-text"><h2 class="hero-heading">BUY ONE FOR TWO</h2><p>Buy one to get both of the agency and personal theme</p></div>', thumb : '', url : ''}
 						],
 		});
 
@@ -119,17 +119,17 @@ jQuery( function($){
 	// xPosition - Horizontal position of the element
 	// inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
 	// outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-	
+
 	function setParallax() {
 		if( $(window).width() > 1024 ) {
 			if( $('#testimonial').hasClass('parallax') ) {
-				$('#testimonial').parallax(0, 0.1);	
+				$('#testimonial').parallax(0, 0.1);
 			}
 		}
 	}
 
 	setParallax();
-		
+
 	$(window).resize( function() {
 		setParallax();
 	});
@@ -154,7 +154,7 @@ jQuery( function($){
 	/**
 	* How to use fetch function:
 	* @param {string} Your Twitter widget ID.
-	* @param {string} The ID of the DOM element you want to write results to. 
+	* @param {string} The ID of the DOM element you want to write results to.
 	* @param {int} Optional - the maximum number of tweets you want returned. Must
 	*     be a number between 1 and 20.
 	* @param {boolean} Optional - set true if you want urls and hashtags to be hyperlinked!
@@ -169,7 +169,7 @@ jQuery( function($){
 	*     Twitter's default renderings.
 	*/
 
-	twitterFetcher.fetch( '441767385733668865', 'tweet', 1, true, false, true, 'default');
+	// twitterFetcher.fetch( '441767385733668865', 'tweet', 1, true, false, true, 'default');
 
 
 	/*----------------------/
@@ -191,7 +191,7 @@ jQuery( function($){
 			$('body, html').animate({
 				scrollTop: 0,
 			}, 800, 'easeInOutExpo');
-		});	
+		});
 	}
 
 
@@ -234,13 +234,13 @@ jQuery( function($){
 				currentItem.title = '<h3>' + originalTitle + '</h3>' + '<p>' + $(currentItem).parents('.work-item').find('img').attr('alt') + '</p>';
 
 				// adding animation
-				this.st.mainClass = 'mfp-fade'; 
+				this.st.mainClass = 'mfp-fade';
 			},
 			close: function() {
-				currentItem.title = originalTitle; 
+				currentItem.title = originalTitle;
 			},
 		}
-		
+
 	});
 
 
@@ -269,7 +269,7 @@ jQuery( function($){
 			container: "body"
 		});
 	}
-	
+
 	// init scrollspy except on Opera, it doesn't work because body has 100% height
 	if ( !navigator.userAgent.match("Opera/") ) {
 		$('body').scrollspy({
@@ -279,6 +279,3 @@ jQuery( function($){
 		$('#main-nav .nav li').removeClass('active');
 	}
 });
-
-
-
